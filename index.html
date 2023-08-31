@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tycoon</title>
+    <link rel="stylesheet" href="/dist/output.css">
+</head>
+<body class="">
+    <header class="w-full flex justify-center line">
+        <img class="h-44 cursor-pointer hover:shadow-lg hover:shadow-yellow-100" src="images/logo.webp" alt="">
+    </header>
+    <section class="flex max-h-max">
+        <section class="justify-start m-2 p-2 bg-orange-200 border-solid border-orange-300 border-2  w-1/6 rounded">
+        <section class=" p-2 m-2 border-solid border-black border-2">
+            <p class="text-center"><span id="current-money"></span> $</p>
+        </section>
+        <section class="flex">
+            <button class="w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="speedUp()" id="x2">
+                <section class="inline-flex items-center">
+                    <img class="w-5 h-5 mr-2" src="images/upgrade.svg" alt="upgrade">
+                    <h2 class="text-center">AD</h2>
+                </section>
+                <p class="text-gray-500">You pay for an AD that increases sells x2</p>
+            </button>
+        </section>
+    </section>
+    <section class="max-w-xl bg-[url('/images/landscape.webp')]">
+        <img class="hover:shadow" src="images/shop.webp" alt="restaurant-img">
+    </section>
+    
+    
+
+<script src="./index.js"></script>    
+</body>
+</html>
