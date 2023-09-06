@@ -3,10 +3,12 @@ const btnPowerUp = document.querySelector('#x2')
 let speedBuy = 8000
 let currentMoney = 0
 let priceSpeed = 20
+let productPrice
 spanMoney.innerHTML = currentMoney
 
 function autoSell() {
-    currentMoney = currentMoney + 2;
+    getPrice()
+    currentMoney = currentMoney + productPrice;
     spanMoney.innerHTML = currentMoney;
 }
 let interval = setInterval(autoSell, speedBuy);
@@ -16,8 +18,8 @@ function speedUp() {
         currentMoney = currentMoney - priceSpeed;
         clearInterval(interval)
         autoSell()
-        speedBuy = speedBuy / 2
-        priceSpeed = priceSpeed * 1.5
+        speedBuy = speedBuy / 1.5
+        priceSpeed = Math.floor(priceSpeed * 1.5)
         interval = setInterval(autoSell, speedBuy); 
     }
     else {
@@ -25,3 +27,35 @@ function speedUp() {
     }
 }
 
+class products {
+    constructor(name, img, price) {
+        this.name = name,
+        this.img = img,
+        this.price = price
+    }
+}
+const burger = new products('Burger', './images/burger.webp', 3)
+const fries = new products('Fries', './images/fries.webp', 2)
+const soda = new products('Soda', './images/soda.webp', 1)
+
+function random(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function getPrice() {
+    let randomPrice = random(0, products.length -1);
+
+    if (randomPrice == 0) {
+        productPrice = burger.price
+        console.log("Burguer");
+    }
+    else if (randomPrice == 1) {
+        productPrice = fries.price
+        console.log("Fries");
+    }
+    else {
+        productPrice = soda.price
+        console.log("Soda");
+    };
+    console.log(productPrice)
+};
