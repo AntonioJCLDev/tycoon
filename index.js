@@ -1,10 +1,12 @@
 const spanMoney = document.querySelector('#current-money')
 const btnPowerUp = document.querySelector('#x2')
+const priceSpan = document.querySelector('#price')
 let speedBuy = 8000
 let currentMoney = 0
 let priceSpeed = 20
 let productPrice
 spanMoney.innerHTML = currentMoney
+priceSpan.innerHTML = priceSpeed
 
 function autoSell() {
     getPrice()
@@ -20,6 +22,7 @@ function speedUp() {
         autoSell()
         speedBuy = speedBuy / 1.5
         priceSpeed = Math.floor(priceSpeed * 1.5)
+        priceSpan.innerHTML = priceSpeed
         interval = setInterval(autoSell, speedBuy); 
     }
     else {
