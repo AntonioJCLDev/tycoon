@@ -37,9 +37,9 @@ class products {
         this.price = price
     }
 }
-const burger = new products('Burger', './images/burger.webp', 3)
-const fries = new products('Fries', './images/fries.webp', 2)
-const soda = new products('Soda', './images/soda.webp', 1)
+const burger = new products('Burger', './images/burger.webp', 5)
+const fries = new products('Fries', './images/fries.webp', 3)
+const soda = new products('Soda', './images/soda.webp', 2)
 
 function random(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -62,3 +62,7 @@ function getPrice() {
     };
     console.log(productPrice)
 };
+
+function addMenu() {
+    const menu = new products('Menú', '', 10)
+}
