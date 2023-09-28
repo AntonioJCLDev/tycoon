@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tycoon</title>
-    <link rel="stylesheet" href="/dist/output.css">
-</head>
-<body class="">
-    <header class="w-full flex justify-center">
-        <img class="h-44 cursor-pointer" src="images/logo.webp" alt="">
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body class="">
+    <header class="bg-slate-600 w-full flex justify-center">
+      <img class="h-44 cursor-pointer" src="images/logo.webp" alt="" />
     </header>
-    <section class="flex max-h-max">
-        <section class="justify-start m-2 p-2 bg-orange-200 border-solid border-orange-300 border-2  w-1/6 rounded">
-        <section class=" bg-white rounded p-2 m-2 border-solid border-black border-2">
-            <p class="text-center "><span id="current-money"></span> $</p>
-        </section>
-        <section class="flex">
-            <button class="w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="speedUp()" id="x2">
-                <section class="inline-flex items-center">
-                    <img class="w-5 h-5 mr-2" src="images/upgrade.svg" alt="upgrade">
-                    <h2 class="text-center">AD</h2>
+    <section class="flex max-w-full">
+        <section class="bg-amber-600 w-1/4 p-2 max-h-full">
+            <section class="justify-start p-3 bg-orange-200 border-solid border-orange-300 border-2 w-full rounded h-full">
+                <section class="bg-white rounded p-2 m-2 border-solid border-black border-2">
+                    <p class="p-1 text-center text-2xl"><span id="current-money"></span> $</p>
                 </section>
-                <p class="text-gray-500">You pay for an AD that increases sells x1.5</p>
-                <p class="flex justify-end"><span id="price"></span> $</p>
-            </button>
+                <section class="flex flex-col gap-2">
+                    <button class="btns w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="speedUp()" id="x2">
+                        <section class="flex items-center">
+                            <img class="w-5 h-5 mr-2" src="images/upgrade.svg" alt="upgrade"/>
+                            <h2 class="text-center">AD</h2>
+                        </section>
+                        <p class="text-gray-500">You pay for an AD that increases sells x1.5</p>
+                        <p class="flex justify-end"><span id="price"></span> $</p>
+                    </button>
+                    <button class="btns w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="" id="">
+                        <section class="flex items-center">
+                            <img class="w-5 h-5 mr-2" src="images/add-work.svg" alt="upgrade"/>
+                            <h2 class="text-center">WE'RE HIRING!!</h2>
+                        </section>
+                        <p class="text-gray-500">You hire a waiter that gives you more benefits in manual sells</p>
+                        <p class="flex justify-end"><span id=""></span> $</p>
+                    </button>
+                    <button class="btns w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="addMenu()" id="">
+                        <section class="flex items-center">
+                            <img class="w-5 h-5 mr-2" src="images/add-outline.svg" alt="upgrade"/>
+                            <h2 class="text-center">MENU</h2>
+                        </section>
+                        <p class="text-gray-500">Add a new product (Menu)</p>
+                        <p class="flex justify-end"><span id="addmenu"></span> $</p>
+                    </button>
+                    <p class="text-center">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+                    <p>Autosell level: <span id="level"></span> (<span id="ms"></span>ms)</p>
+                </section>
+            </section>
         </section>
-    </section>
-    <section class="max-w-xl bg-[url('/images/landscape.webp')]">
-        <img class="hover:shadow" src="images/shop.webp" alt="restaurant-img">
+      <section class="bg-lime-400 w-2/4">
+        <img class="flex justify-center cursor-pointer clip-path-shop w-3/4" src="./images/shop.webp" alt="" onclick="manualSells()"/>
+      </section>
+      <section class="bg-sky-600 w-1/4">
+        <p>Hola buenas tardes</p>
+      </section>
     </section>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
