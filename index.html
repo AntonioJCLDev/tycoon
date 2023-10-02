@@ -6,12 +6,12 @@
     <title>Tycoon</title>
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
-  <body class="">
+  <body class="overflow-hidden">
     <header class="bg-slate-600 w-full flex justify-center">
       <img class="h-44 cursor-pointer" src="images/logo.webp" alt="" />
     </header>
     <section class="flex max-w-full">
-        <section class="bg-amber-600 w-1/4 p-2 max-h-full">
+        <section class="bg-amber-600 w-1/3 p-2 max-h-full">
             <section class="justify-start p-3 bg-orange-200 border-solid border-orange-300 border-2 w-full rounded h-full">
                 <section class="bg-white rounded p-2 m-2 border-solid border-black border-2">
                     <p class="p-1 text-center text-2xl"><span id="current-money"></span> $</p>
@@ -23,15 +23,15 @@
                             <h2 class="text-center">AD</h2>
                         </section>
                         <p class="text-gray-500">You pay for an AD that increases sells x1.5</p>
-                        <p class="flex justify-end"><span id="price"></span> $</p>
+                        <p class="flex justify-end"><span id="upgrade-auto"></span> $</p>
                     </button>
-                    <button class="btns w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="" id="">
+                    <button class="btns w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="upgradeClick()" id="">
                         <section class="flex items-center">
                             <img class="w-5 h-5 mr-2" src="images/add-work.svg" alt="upgrade"/>
                             <h2 class="text-center">WE'RE HIRING!!</h2>
                         </section>
                         <p class="text-gray-500">You hire a waiter that gives you more benefits in manual sells</p>
-                        <p class="flex justify-end"><span id=""></span> $</p>
+                        <p class="flex justify-end"><span id="upgrade-click"></span> $</p>
                     </button>
                     <button class="btns w-full bg-orange-300 hover:bg-orange-400 text-black font-bold py-2 px-4 rounded" onclick="addMenu()" id="">
                         <section class="flex items-center">
@@ -39,18 +39,16 @@
                             <h2 class="text-center">MENU</h2>
                         </section>
                         <p class="text-gray-500">Add a new product (Menu)</p>
-                        <p class="flex justify-end"><span id="addmenu"></span> $</p>
+                        <p class="flex justify-end"><span id="add-menu"></span> $</p>
                     </button>
                     <p class="text-center">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
                     <p>Autosell level: <span id="level"></span> (<span id="ms"></span>ms)</p>
+                    <p>Click level: <span id="click-level"></span> (<span id="per-click"></span>/click )</p>
                 </section>
             </section>
         </section>
-      <section class="bg-lime-400 w-2/4">
-        <img class="flex justify-center cursor-pointer clip-path-shop w-3/4" src="./images/shop.webp" alt="" onclick="manualSells()"/>
-      </section>
-      <section class="bg-sky-600 w-1/4">
-        <p>Hola buenas tardes</p>
+      <section class="bg-lime-400 h-full flex flex-col items-center justify-center">
+        <img class="cursor-pointer clip-path-shop w-1/2" src="./images/shop.webp" alt="" onclick="manualSells()"/>
       </section>
     </section>
     <script src="./index.js"></script>

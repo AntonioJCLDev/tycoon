@@ -1,30 +1,53 @@
 const spanMoney = document.querySelector('#current-money')
 const btnPowerUp = document.querySelector('#x2')
-const priceSpan = document.querySelector('#price')
-const priceAdd = document.querySelector('#addmenu')
+const priceSpan = document.querySelector('#upgrade-auto')
+const priceAdd = document.querySelector('#add-menu')
+const clickSpan = document.querySelector('#upgrade-click')
 const level = document.querySelector('#level')
 const ms = document.querySelector('#ms')
+const clickLevel = document.querySelector('#click-level')
+const perClick = document.querySelector('#per-click')
 let speedBuy = 8000
 let currentMoney = 0
 let pricemenu = 100
 let priceSpeed = 20
+let priceClick = 50
 let productPrice
 let speedLevel = 1
+let clickLvl = 1
+let cashClick = 1
 let click = 1
 spanMoney.innerHTML = currentMoney
 priceSpan.innerHTML = priceSpeed
 priceAdd.innerHTML = pricemenu
+clickSpan.innerHTML = priceClick
+clickLevel.innerHTML = clickLvl
+perClick.innerHTML = cashClick
 level.innerHTML = speedLevel
 ms.innerHTML = speedBuy
 
-/* if (currentMoney < priceSpeed || currentMoney < priceAdd){
-    document.getElementsByClassName("btns").disabled = true;
-} */
 
 function manualSells() {
     currentMoney = currentMoney + click
     spanMoney.innerHTML = currentMoney
 };
+
+function upgradeClick() {
+    if(currentMoney >= priceClick) {
+        currentMoney = currentMoney - priceClick;
+        clickLvl ++
+        autoSell()
+        click = click * 2
+        cashClick = click
+        priceClick = Math.floor(priceClick * 2)
+        clickSpan.innerHTML = priceClick
+        clickLevel.innerHTML = clickLvl
+        perClick.innerHTML = cashClick
+    }
+    else {
+        alert("No tienes dinero suficiente")
+    }
+}
 
 function autoSell() {
     getPrice()
