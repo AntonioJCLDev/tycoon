@@ -3,8 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tycoon</title>
+    <title>BURGER TYCOON</title>
     <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/x-ico" href="images/favicon-logo.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+      .failure {
+        background: linear-gradient(to right, #b00028, #910021);
+      }
+
+      .success {
+        background: linear-gradient(to right, #00b09b, #96c93d)
+      }
+
+    </style>
   </head>
   <body class="overflow-hidden">
     <header class="bg-slate-600 w-full flex justify-center">
@@ -43,14 +55,15 @@
                     </button>
                     <p class="text-center">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
                     <p>Autosell level: <span id="level"></span> (<span id="ms"></span>ms)</p>
-                    <p>Click level: <span id="click-level"></span> (<span id="per-click"></span>/click )</p>
+                    <p>Click level: <span id="click-level"></span> (<span id="per-click"></span>$/click )</p>
                 </section>
             </section>
         </section>
       <section class="bg-lime-400 h-full flex flex-col items-center justify-center">
-        <img class="cursor-pointer clip-path-shop w-1/2" src="./images/shop.webp" alt="" onclick="manualSells()"/>
+        <img class="cursor-pointer clip-path-shop w-1/2 hover:scale-105 hover:ease-in duration-200" src="./images/shop.webp" alt="" onclick="manualSells()"/>
       </section>
     </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

@@ -26,6 +26,20 @@ perClick.innerHTML = cashClick
 level.innerHTML = speedLevel
 ms.innerHTML = speedBuy
 
+const notification = (text, className,gravity = "bottom", position = "right") => {
+    Toastify({
+        text: text,
+        duration: 3000,
+        className: className,
+        newWindow: true,
+        close: true,
+        gravity: gravity, // `top` or `bottom`
+        position: position, // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+      }).showToast();
+}
+
+
 
 function manualSells() {
     currentMoney = currentMoney + click
@@ -43,9 +57,10 @@ function upgradeClick() {
         clickSpan.innerHTML = priceClick
         clickLevel.innerHTML = clickLvl
         perClick.innerHTML = cashClick
+        notification("Has mejorado los clicks!!", "success")
     }
     else {
-        alert("No tienes dinero suficiente")
+        notification("No tienes dinero suficiente!", "failure")
     }
 }
 
@@ -67,10 +82,11 @@ function speedUp() {
         priceSpan.innerHTML = priceSpeed
         level.innerHTML = speedLevel
         ms.innerHTML = Math.floor(speedBuy)
-        interval = setInterval(autoSell, speedBuy); 
+        interval = setInterval(autoSell, speedBuy);
+        notification("Has mejorado la velocidad de las ventas automáticas!!", "success")
     }
     else {
-        alert("No tienes dinero suficiente")
+        notification("No tienes dinero suficiente!", "failure")
     }
 }
 
@@ -84,7 +100,6 @@ class products {
 const burger = new products('Burger', './images/burger.webp', 5)
 const fries = new products('Fries', './images/fries.webp', 3)
 const soda = new products('Soda', './images/soda.webp', 2)
-const menu = new products('Menu', './images/menu.webp', 10)
 
 function random(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min)
