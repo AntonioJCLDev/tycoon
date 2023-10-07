@@ -7,7 +7,7 @@ const level = document.querySelector('#level')
 const ms = document.querySelector('#ms')
 const clickLevel = document.querySelector('#click-level')
 const perClick = document.querySelector('#per-click')
-let speedBuy = 8000
+let speedBuy = 5000
 let currentMoney = 0
 let pricemenu = 100
 let priceSpeed = 20
@@ -57,10 +57,10 @@ function upgradeClick() {
         clickSpan.innerHTML = priceClick
         clickLevel.innerHTML = clickLvl
         perClick.innerHTML = cashClick
-        notification("Has mejorado los clicks!!", "success")
+        notification("Clicks upgraded!!", "success")
     }
     else {
-        notification("No tienes dinero suficiente!", "failure")
+        notification("You don't have money enough", "failure")
     }
 }
 
@@ -83,10 +83,10 @@ function speedUp() {
         level.innerHTML = speedLevel
         ms.innerHTML = Math.floor(speedBuy)
         interval = setInterval(autoSell, speedBuy);
-        notification("Has mejorado la velocidad de las ventas automáticas!!", "success")
+        notification("Auto-sells upgraded!!", "success")
     }
     else {
-        notification("No tienes dinero suficiente!", "failure")
+        notification("You don't have money enough", "failure")
     }
 }
 
@@ -120,10 +120,10 @@ function getPrice() {
         productPrice = soda.price
         console.log("Soda");
     }
-    else if (randomPrice == 3) {
+    /* else if (randomPrice == 3) {
         productPrice = menu.price
         console.log("Menu")
-    }
+    } */
     console.log(productPrice)
 };
 
