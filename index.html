@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/dist/output.css" />
     <link rel="icon" type="image/x-ico" href="images/favicon-logo.ico">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
       .failure {
         background: linear-gradient(to right, #b00028, #910021);
@@ -16,13 +19,13 @@
       }
     </style>
   </head>
-  <body class="overflow-hidden bg-body">
-    <header class="bg-header w-full flex justify-center">
+  <body class="overflow-hidden bg-body font-roboto">
+    <header class="bg-header w-full inline-flex space-x-72 justify-center shadow-xl">
       <img class=" p-3 h-44 cursor-pointer" src="images/logo-lines.webp" alt="" />
     </header>
     <section class="flex max-w-full">
-        <section class="bg-header p-2">
-            <section class="justify-start p-3 bg-body border-solid border-2 w-full rounded">
+        <section class="bg-header h-full shadow-xl p-2">
+            <section class="justify-start p-3 border-solid bg-body border-2 h-full w-full rounded">
                 <section class="bg-white rounded p-2 m-2 border-solid border-black border-2">
                     <p class="p-1 text-center text-2xl"><span id="current-money"></span> $</p>
                 </section>
@@ -32,7 +35,7 @@
                             <img class="w-5 h-5 mr-2" src="images/upgrade.svg" alt="upgrade"/>
                             <h2 class="text-center">AD</h2>
                         </section>
-                        <p class="text-body">You pay for an AD that increases sells x1.5</p>
+                        <p class="text-body italic">You pay for an AD that increases sells x1.5</p>
                         <p class="flex justify-end"><span id="upgrade-auto"></span> $</p>
                     </button>
                     <button class="btns w-full bg-gray hover:bg-kindaWhite text-black font-bold py-2 px-4 rounded" onclick="upgradeClick()" id="">
@@ -40,7 +43,7 @@
                             <img class="w-5 h-5 mr-2" src="images/add-work.svg" alt="upgrade"/>
                             <h2 class="text-center">WE'RE HIRING!!</h2>
                         </section>
-                        <p class="text-body">You hire a waiter that gives you more benefits in manual sells</p>
+                        <p class="text-body italic">You hire a waiter that gives you more benefits in manual sells</p>
                         <p class="flex justify-end"><span id="upgrade-click"></span> $</p>
                     </button>
                     <button class="btns w-full bg-gray hover:bg-kindaWhite text-black font-bold py-2 px-4 rounded" onclick="addMenu()" id="">
@@ -48,16 +51,16 @@
                             <img class="w-5 h-5 mr-2" src="images/add-outline.svg" alt="upgrade"/>
                             <h2 class="text-center">MENU</h2>
                         </section>
-                        <p class="text-body">Add a new product (Menu)</p>
+                        <p class="text-body italic">Add a new product (Menu) //UNABLE//</p>
                         <p class="flex justify-end"><span id="add-menu"></span> $</p>
                     </button>
                     <p class="text-center text-kindaWhite">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
-                    <p class="text-kindaWhite">Autosell level: <span id="level"></span> (<span id="ms"></span>ms)</p>
-                    <p class="text-kindaWhite">Click level: <span id="click-level"></span> (<span id="per-click"></span>$/click )</p>
+                    <p class="text-kindaWhite italic">Autosell level: <span id="level"></span> (<span id="ms"></span>s)</p>
+                    <p class="text-kindaWhite italic">Click level: <span id="click-level"></span> (<span id="per-click"></span>$/click )</p>
                 </section>
             </section>
         </section>
-      <section class="grid place-items-center">
+      <section class="flex justify-center max-w-full h-auto">
         <img class="cursor-pointer clip-path-shop w-1/2 hover:scale-105 hover:ease-in duration-200" src="./images/shop.webp" alt="" onclick="manualSells()"/>
       </section>
     </section>

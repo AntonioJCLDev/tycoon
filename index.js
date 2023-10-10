@@ -1,5 +1,4 @@
 const spanMoney = document.querySelector('#current-money')
-const btnPowerUp = document.querySelector('#x2')
 const priceSpan = document.querySelector('#upgrade-auto')
 const priceAdd = document.querySelector('#add-menu')
 const clickSpan = document.querySelector('#upgrade-click')
@@ -7,7 +6,7 @@ const level = document.querySelector('#level')
 const ms = document.querySelector('#ms')
 const clickLevel = document.querySelector('#click-level')
 const perClick = document.querySelector('#per-click')
-let speedBuy = 5000
+let speedBuy = 60000
 let currentMoney = 0
 let pricemenu = 100
 let priceSpeed = 20
@@ -24,7 +23,7 @@ clickSpan.innerHTML = priceClick
 clickLevel.innerHTML = clickLvl
 perClick.innerHTML = cashClick
 level.innerHTML = speedLevel
-ms.innerHTML = speedBuy
+ms.innerHTML = speedBuy/1000
 
 const notification = (text, className,gravity = "bottom", position = "right") => {
     Toastify({
@@ -77,11 +76,11 @@ function speedUp() {
         speedLevel ++
         clearInterval(interval)
         autoSell()
-        speedBuy = speedBuy / 1.5
-        priceSpeed = Math.floor(priceSpeed * 1.5)
+        speedBuy = speedBuy / 1.3
+        priceSpeed = Math.floor(priceSpeed * 2)
         priceSpan.innerHTML = priceSpeed
         level.innerHTML = speedLevel
-        ms.innerHTML = Math.floor(speedBuy)
+        ms.innerHTML = twoDecimals(speedBuy / 1000)
         interval = setInterval(autoSell, speedBuy);
         notification("Auto-sells upgraded!!", "success")
     }
@@ -127,19 +126,26 @@ function getPrice() {
     console.log(productPrice)
 };
 
+function twoDecimals(n) {
+    let t = n.toString();
+    let regex=/(\d*.\d{0,2})/;
+    return t.match(regex)[0];
+  }
+
 const addProduct = (name, img, price) => {
     const newProduct = new products(name, img, price);
 
     return newProduct;
 }
 
-/* function addMenu() {
+function addMenu() {
+    notification("I'm still working in this feature", "failure")
+    /* currentMoney = currentMoney - priceAdd;
     if(currentMoney >= priceAdd) {
-        currentMoney = currentMoney - priceAdd;
         const menu = addProduct('Menu', './images/menu.webp', 10)
         priceAdd.innerHTML = pricemenu
     }
     else {
         alert("No tienes dinero suficiente")
-    }
-} */
+    } */
+}
